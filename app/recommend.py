@@ -14,8 +14,11 @@ SIMILARITY_PATH = BASE_DIR / "models" / "similarity.pkl"
 # Load Saved Files
 # ==========================================
 
-movies = pickle.load(open(MOVIE_PATH, "rb"))
-similarity = pickle.load(open(SIMILARITY_PATH, "rb"))
+with open(MOVIE_PATH, "rb") as file:
+    movies = pickle.load(file)
+
+with open(SIMILARITY_PATH, "rb") as file:
+    similarity = pickle.load(file)
 
 # ==========================================
 # Recommendation Function
